@@ -1,0 +1,12 @@
+IP: 192.168.1.1 - Status: Open
+IP: 192.168.1.2 - Status: Closed
+IP: 192.168.1.3 - Status: Open
+IP: 192.168.1.4 - Status: Blocked
+IP: 192.168.1.5 - Status: Open
+
+check open IPs
+
+grep "Open" network_scan.txt > "command"
+IP: 192.168.1.1 - Status: Open
+IP: 192.168.1.3 - Status: Open
+IP: 192.168.1.5 - Status: Open
