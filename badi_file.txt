@@ -1,0 +1,6 @@
+Line 1: System Booting...
+Line 2: Firewall Active
+Line 3: Scanning Ports
+Line 4: Exploit Loaded
+Line 5: CRITICAL_ERROR: EXPLOIT_DETECTED
+                                              
