@@ -1,0 +1,25 @@
+THIS CODE WRITE INSIDE NANO !
+
+#!/bin/bash
+
+echo "Aapka username kya hai?"
+read USERNAME
+
+# Yahan check ho raha hai: Agar USERNAME barabar (=) hai "Mohit" ke
+if [ "$USERNAME" = "Mohit" ]
+then
+    echo "Welcome, Agent Mohit! Access Granted. 😎"
+else
+    echo "Alert! Unauthorized user detected! Access Denied. 🛑"
+fi
+
+THIS IS OUTPUT -->
+
+Aapka username kya hai?
+Mohit
+Welcome, Agent Mohit! Access Granted. 😎
+
+"MOST IMPORTANT THING" 
+
+First, the app will ask for your username;
+access will be granted only if it is correct.
