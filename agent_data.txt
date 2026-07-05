@@ -1,0 +1,16 @@
+Mission 1 is active.
+Agent Mohit is on a secret mission.
+Target network is locked.
+
+#!/bin/bash
+grep "Mohit" agent_data.txt
+Agent Mohit is on a secret mission.
+
+📄 find_agent.sh (Secret Agent Search)
+Kyun banayi: Kisi badi data file ke andar se kisi khaas word ya target string ko filter karne ke liye.
+
+Isme use hui commands:
+
+#!/bin/bash — Shebang line.
+
+grep — agent_data.txt file ke andar se specific word ("Mohit") ko dhoondh kar screen par lane ke liye.
