@@ -85,3 +85,17 @@ Here is the breakdown of the automation tools included in this repository:
    ```bash
    git clone [https://github.com/ShadowSecMohit-X/linux-bash-automation.git](https://github.com/ShadowSecMohit-X/linux-bash-automation.git)
    cd linux-bash-automation
+
+---
+
+## 🛡️ Advanced Built-in Automation Tools (Level Up!)
+
+I am now expanding this repository with advanced scripts that integrate core Linux built-in utilities for systems auditing and network intelligence:
+
+### 11. Hacker File Finder (`search_tool.sh`)
+*   **Purpose:** Uses the powerful core `find` utility to scan the directory and locate any hidden or system file by its name or extension instantly.
+*   **Concepts learned:** `find` command structure, wildcard expressions (`*.sh`), directory traversal.
+
+### 12. Network Intelligence Auditor (`net_checker.sh`)
+*   **Purpose:** Automatically extracts the local system's active IP configurations and diagnostics the live status of any remote host/domain using network packets.
+*   **Concepts learned:** Network interfaces (`ip a`), packet routing (`ping`), error status flags (`$?`), stream filtering (`grep`).
