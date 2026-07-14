@@ -99,3 +99,8 @@ I am now expanding this repository with advanced scripts that integrate core Lin
 ### 12. Network Intelligence Auditor (`net_checker.sh`)
 *   **Purpose:** Automatically extracts the local system's active IP configurations and diagnostics the live status of any remote host/domain using network packets.
 *   **Concepts learned:** Network interfaces (`ip a`), packet routing (`ping`), error status flags (`$?`), stream filtering (`grep`).
+
+
+### 13. Advanced App Installer (`system_installer.sh`)
+*   **Purpose:** Automates system repository updates and securely installs third-party tools/packages with error-handling logic.
+*   **Concepts learned:** Superuser execution (`sudo`), package manager (`apt`), command verification flags (`$?`).
