@@ -105,6 +105,13 @@ I am now expanding this repository with advanced scripts that integrate core Lin
 *   **Concepts learned:** Superuser execution (`sudo`), package manager (`apt`), command verification flags (`$?`).
 
 
+### 14. Automated Network Recon Bot (`network_recon.sh`)
+*   **Purpose:** Automatically audits target status using network pings and executes a fast Nmap scan (`nmap -F`) against active hosts, dynamically routing and saving live intelligence output directly into a dedicated report file (`recon_report.txt`).
+*   **Concepts learned:** Network state auditing, output redirection (`>` and `>>`), dynamic text reporting, and process execution flow control.
+
+### 15. Ultimate Cyber Dependency Installer (`hacker_setup.sh`)
+*   **Purpose:** A real-world system preparation script that audits required network and security packages (`curl`, `nmap`, `git`, `net-tools`, `htop`), automatically installs missing dependencies via `apt`, and ensures administrative privileges (`sudo`).
+*   **Concepts learned:** Array manipulation, `for` loops, root user verification (`$EUID`), and silent output redirection (`>/dev/null 2>&1`).
 ### 13. Advanced App Installer (`system_installer.sh`)
 *   **Purpose:** Automates system repository updates and securely installs third-party tools/packages with error-handling logic.
 *   **Concepts learned:** Superuser execution (`sudo`), package manager (`apt`), command verification flags (`$?`).
