@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# ======================================================
+# SHADOW-SEC AUTOMATED RECON BOT STARTING...
+# ======================================================
+
+echo "--------------------------------------------------"
+echo "🕵️‍♂️ TARGET LOGGED: scanme.nmap.org"
+echo "🕒 TIMESTAMP: $(date)"
+echo "--------------------------------------------------"
+
+TARGET="scanme.nmap.org"
+REPORT_FILE="recon_report.txt"
+
+# 1. Pehle check karte hain ki internet/target active hai ya nahi
+ping -c 2 $TARGET > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+    echo "🟢 STATUS: Target active hai! Moving to port scanning..."
+    echo "--- NMAP SCAN RESULTS ---" > $REPORT_FILE
+    
+    # 2. Fast network scan chalana aur output ko file mein daalna
+    nmap -F $TARGET >> $REPORT_FILE
+    
+    cat $REPORT_FILE
+    echo "=================================================="
+    echo "🎯 SUCCESS: Recon complete. Report saved in $REPORT_FILE"
+else
+    echo "🔴 ERROR: Target down hai ya Internet nahi chal raha!"
+    exit 1
+fi
