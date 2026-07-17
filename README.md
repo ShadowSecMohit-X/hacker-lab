@@ -116,3 +116,9 @@ I am now expanding this repository with advanced scripts that integrate core Lin
 ### 16. Automated Backup & Health Monitor (`system_backup.sh`)
 *   **Purpose:** Monitors core system health by auditing active root disk partition limits (aborting if disk usage is greater than 90%) and automatically zips files from the workspace directory into a compressed `.tar.gz` archive with dynamic time-stamps and success logging.
 *   **Concepts learned:** Storage threshold logic (`df`, `awk`, `sed`), archive compression (`tar -czf`), directory creation checks (`[ ! -d ]`), and automated status reporting logs.
+
+
+### 17. Cyber Port & Process Watchdog (`port_watchdog.sh`)
+*   **Purpose:** Actively monitors and audits system endpoints by checking active network listening states via socket statistics (`ss -tulpn`) and capturing the top 5 CPU-consuming background processes using advanced process status filters (`ps`), saving the raw intelligence output to a centralized log folder.
+*   **Concepts learned:** Network socket auditing (`ss`), process capability analysis (`ps` pipeline sorting), log rotations with `mkdir -p`, and string appending formatting.
+*   
