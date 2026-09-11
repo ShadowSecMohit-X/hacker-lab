@@ -1,4 +1,3 @@
-
 # 🥷 Welcome to ShadowSecMohit-X's Hacker Lab!
 
 > **"Started from zero, now navigating the terminal."** 🚀
@@ -20,23 +19,23 @@ Main Linux file system ke basics par kabza kar chuka hoon:
 ---
 
 ## 📈 Targets & Progress
-- [ ] Networking & IP Tracking basics 🌐
-- [x] Bash Scripting to automate stuff 🤖 *(Level Completed! 10 Tools Built)*
-- [ ] Web Penetration Testing basics 🕵️‍♂️
+- [x] Linux Foundations & Basic Terminal Commands 🐧
+- [x] Bash Scripting to Automate Stuff 🤖 *(Level Completed! 17 Tools Built)*
+- [x] Dynamic Binary Analysis & Forensics CTF Labs 🧩
+- [x] Indian Cyber Quest (ICQ) Qualifier Event 🏆
+- [ ] Level 3: Advanced Linux System Administration & Process Control ⚙️
+- [ ] Networking & Traffic Analysis 🌐
+- [ ] Web Penetration Testing & Bug Hunting 🕵️‍♂️
 
 ---
 
 # Linux Bash Automation & Cyber Security Scripts 🚀
 
-Welcome to my automation wing! This section contains a collection of **10 custom Bash scripts** designed to automate daily Linux system administration tasks, manage networking lookups, and simulate fundamental cyber security operations. 
-
-Through these projects, I have mastered core scripting concepts like variables, user input handling, conditional logic (`if-else`), loops (`while`), file-system manipulation, and interactive command-line menus.
+Welcome to my automation wing! This section contains a collection of **17 custom Bash scripts** designed to automate daily Linux system administration tasks, manage networking lookups, and simulate fundamental cyber security operations.
 
 ---
 
 ## 🛠️ Projects Overview
-
-Here is the breakdown of the automation tools included in this repository:
 
 ### 1. Profile Generator (`hacker_profile.sh`)
 * **Purpose:** An interactive script that captures user details (alias, favorite tool, target) and generates a formatted cyber agent profile.
@@ -55,7 +54,7 @@ Here is the breakdown of the automation tools included in this repository:
 * **Concepts learned:** File-test operators (`-f` flag).
 
 ### 5. Stealth Password Lock (`secret_lock.sh`)
-* **Purpose:** Implements a secure terminal authentication simulation. It hides the password characters while typing (Hacker Style) and handles login attempts.
+* **Purpose:** Implements a secure terminal authentication simulation. It hides password characters while typing and handles login attempts.
 * **Concepts learned:** Secure input (`read -s`), string matching.
 
 ### 6. Automated Port Counter (`loop_counter.sh`)
@@ -67,7 +66,7 @@ Here is the breakdown of the automation tools included in this repository:
 * **Concepts learned:** Variable reuse, dynamic outputs.
 
 ### 8. Incident Clean-up Tool (`auto_cleaner.sh`)
-* **Purpose:** Simulates an incident response clean-up where a user can safely delete a redundant/temporary directory after an explicit confirmation check.
+* **Purpose:** Simulates an incident response clean-up where a user can safely delete a redundant/temporary directory after confirmation.
 * **Concepts learned:** Safe directory removal (`rm -rf`), nested confirmation logic.
 
 ### 9. Threat Intelligence Logger (`target_logger.sh`)
@@ -78,47 +77,72 @@ Here is the breakdown of the automation tools included in this repository:
 * **Purpose:** A full-fledged interactive dashboard allowing security analysts to select missions (Network Scan, System Health Check, or Exit) from a structured terminal panel.
 * **Concepts learned:** Advanced conditional trees (`if-elif-else`), system action mapping.
 
+### 11. Hacker File Finder (`search_tool.sh`)
+* **Purpose:** Uses the core `find` utility to scan directories and locate any hidden or system file by name or extension instantly.
+* **Concepts learned:** `find` command structure, wildcard expressions (`*.sh`), directory traversal.
+
+### 12. Network Intelligence Auditor (`net_checker.sh`)
+* **Purpose:** Automatically extracts the local system's active IP configurations and diagnostics the live status of any remote host/domain using network packets.
+* **Concepts learned:** Network interfaces (`ip a`), packet routing (`ping`), error status flags (`$?`), stream filtering (`grep`).
+
+### 13. Advanced App Installer (`system_installer.sh`)
+* **Purpose:** Automates system repository updates and securely installs third-party tools/packages with error-handling logic.
+* **Concepts learned:** Superuser execution (`sudo`), package manager (`apt`), command verification flags (`$?`).
+
+### 14. Automated Network Recon Bot (`network_recon.sh`)
+* **Purpose:** Automatically audits target status using network pings and executes a fast Nmap scan (`nmap -F`) against active hosts, saving live intelligence output directly into a dedicated report file (`recon_report.txt`).
+* **Concepts learned:** Network state auditing, output redirection (`>` and `>>`), dynamic text reporting, and process execution flow control.
+
+### 15. Ultimate Cyber Dependency Installer (`hacker_setup.sh`)
+* **Purpose:** A real-world system preparation script that audits required network and security packages (`curl`, `nmap`, `git`, `net-tools`, `htop`), automatically installs missing dependencies via `apt`, and ensures administrative privileges (`sudo`).
+* **Concepts learned:** Array manipulation, `for` loops, root user verification (`$EUID`), and silent output redirection (`>/dev/null 2>&1`).
+
+### 16. Automated Backup & Health Monitor (`system_backup.sh`)
+* **Purpose:** Monitors core system health by auditing active root disk partition limits (aborting if disk usage is greater than 90%) and automatically zips files from the workspace directory into a compressed `.tar.gz` archive with dynamic timestamps and status logging.
+* **Concepts learned:** Storage threshold logic (`df`, `awk`, `sed`), archive compression (`tar -czf`), directory creation checks (`[ ! -d ]`), and automated status reporting logs.
+
+### 17. Cyber Port & Process Watchdog (`port_watchdog.sh`)
+* **Purpose:** Actively monitors and audits system endpoints by checking active network listening states via socket statistics (`ss -tulpn`) and capturing the top 5 CPU-consuming background processes using advanced process status filters (`ps`), saving raw intelligence output to a centralized log folder.
+* **Concepts learned:** Network socket auditing (`ss`), process capability analysis (`ps` pipeline sorting), log rotations with `mkdir -p`, and string appending formatting.
+
+---
+
+## 🧩 Dynamic Analysis & Forensics Labs (Level 2: Completed 🏆)
+
+### 18. SpookyPass Binary Challenge Writeup
+* **Objective:** Unpack, inspect, and extract dynamic flags from an obfuscated executable binary.
+* **Tools Used:** `file`, `unzip`, `chmod`, `strings`, `grep`, `ltrace`
+* **Methodology:**
+  1. Extracted archived challenge files using `unzip` and elevated binary privileges using `chmod +x pass`.
+  2. Executed dynamic library call tracing via `ltrace ./pass` to monitor string memory comparisons (`strcmp`) at runtime.
+  3. Intercepted dynamic runtime string: `s3cr3t_p455_f0r_gh05t5_4nd_gh0ul5`
+  4. Extracted readable flag using string stream filtering: `strings pass | grep -i "HTB{"`
+* **Flag Captured:** `HTB{un0bfu5c4t3d_5tr1ng5}`
+
+### 19. Server Log Forensics & Pipeline Analysis
+* **Log Auditing:** Formulated advanced `grep` pipelines to extract incident indicators (`FAILED LOGIN`, `UNAUTHORIZED`) from multi-thousand line log streams.
+* **Stream Decoding:** Processed encoded Base64 authorization tokens via terminal pipelines (`echo <cipher> | base64 -d`).
+
+---
+
+## 🏆 Target Events Accomplished
+* **[x] Indian Cyber Quest (ICQ) Qualifier Event** — Prepared, attempted, and successfully completed hands-on challenges focusing on Linux command-line forensics, dynamic tracing, and stream decoding!
+
+---
+
+## 🚀 Level 3: Core Linux System Administration & Automation Projects (Next Phase)
+
+Now transitioning into deep-dive system-level administration, practical process management, and advanced file manipulation before stepping into Web Penetration Testing:
+
+- [ ] **Project 1:** Deep System Traversal & Permission Audit Scripting (`chmod` octal modes, `chown`, `find -perm`)
+- [ ] **Project 2:** Advanced Process Interceptor & Job Control (`ps aux`, `htop`, `kill`, `bg`/`fg` management)
+- [ ] **Project 3:** Dynamic I/O Redirection Engine (`tee`, multi-command pipelines `&&` / `||`, error stream splitting `2>&1`)
+
 ---
 
 ## 💻 How to Run These Scripts
-
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/ShadowSecMohit-X/linux-bash-automation.git](https://github.com/ShadowSecMohit-X/linux-bash-automation.git)
    cd linux-bash-automation
 
----
-
-## 🛡️ Advanced Built-in Automation Tools (Level Up!)
-
-I am now expanding this repository with advanced scripts that integrate core Linux built-in utilities for systems auditing and network intelligence:
-
-### 11. Hacker File Finder (`search_tool.sh`)
-*   **Purpose:** Uses the powerful core `find` utility to scan the directory and locate any hidden or system file by its name or extension instantly.
-*   **Concepts learned:** `find` command structure, wildcard expressions (`*.sh`), directory traversal.
-
-### 12. Network Intelligence Auditor (`net_checker.sh`)
-*   **Purpose:** Automatically extracts the local system's active IP configurations and diagnostics the live status of any remote host/domain using network packets.
-*   **Concepts learned:** Network interfaces (`ip a`), packet routing (`ping`), error status flags (`$?`), stream filtering (`grep`).
-
-*   ### 13. Advanced App Installer (`system_installer.sh`)
-*   **Purpose:** Automates system repository updates and securely installs third-party tools/packages with error-handling logic.
-*   **Concepts learned:** Superuser execution (`sudo`), package manager (`apt`), command verification flags (`$?`).
-
-
-### 14. Automated Network Recon Bot (`network_recon.sh`)
-*   **Purpose:** Automatically audits target status using network pings and executes a fast Nmap scan (`nmap -F`) against active hosts, dynamically routing and saving live intelligence output directly into a dedicated report file (`recon_report.txt`).
-*   **Concepts learned:** Network state auditing, output redirection (`>` and `>>`), dynamic text reporting, and process execution flow control.
-
-### 15. Ultimate Cyber Dependency Installer (`hacker_setup.sh`)
-*   **Purpose:** A real-world system preparation script that audits required network and security packages (`curl`, `nmap`, `git`, `net-tools`, `htop`), automatically installs missing dependencies via `apt`, and ensures administrative privileges (`sudo`).
-*   **Concepts learned:** Array manipulation, `for` loops, root user verification (`$EUID`), and silent output redirection (`>/dev/null 2>&1`).
-### 16. Automated Backup & Health Monitor (`system_backup.sh`)
-*   **Purpose:** Monitors core system health by auditing active root disk partition limits (aborting if disk usage is greater than 90%) and automatically zips files from the workspace directory into a compressed `.tar.gz` archive with dynamic time-stamps and success logging.
-*   **Concepts learned:** Storage threshold logic (`df`, `awk`, `sed`), archive compression (`tar -czf`), directory creation checks (`[ ! -d ]`), and automated status reporting logs.
-
-
-### 17. Cyber Port & Process Watchdog (`port_watchdog.sh`)
-*   **Purpose:** Actively monitors and audits system endpoints by checking active network listening states via socket statistics (`ss -tulpn`) and capturing the top 5 CPU-consuming background processes using advanced process status filters (`ps`), saving the raw intelligence output to a centralized log folder.
-*   **Concepts learned:** Network socket auditing (`ss`), process capability analysis (`ps` pipeline sorting), log rotations with `mkdir -p`, and string appending formatting.
-*   
